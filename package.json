@@ -21,51 +21,17 @@
     "dev": "webpack --mode=development && concurrently \"gulp\" \"webpack --mode=development --progress --colors --watch\"",
     "prod": "gulp clean-build && grunt remove-code && webpack --mode=production && gulp prod --production && grunt",
     "staging": "gulp clean-build && webpack --mode=production && gulp prod --production && grunt",
-    "test": "jest --coverage",
-    "test:watch": "jest --coverage --watch",
     "report-coverage": "cat ./app/tests/__tests__/coverage/lcov.info | codecov",
     "e2e": "run-p --race prod server:e2e cypress:run",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --spec ./app/tests/e2e/cypress/integration/example_spec.js",
-    "open-localhost": "opn http://localhost:8080/",
-    "eslint": "./node_modules/.bin/eslint app/"
+    "open-localhost": "opn http://localhost:8080/"
   },
   "bin": {
     "create-react-redux-app-structure": "./cli/cli.js"
   },
-  "config": {
-    "ghooks": {
-      "pre-commit": "npm run test && npm run eslint"
-    }
-  },
-  "jest": {
-    "verbose": true,
-    "globals": {},
-    "testPathIgnorePatterns": [
-      "__snapshots__",
-      "coverage",
-      "configurations"
-    ],
-    "coverageDirectory": "app/tests/__tests__/coverage/",
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "app/*.jsx",
-      "app/*.js",
-      "app/*/*.jsx",
-      "app/*/*.js",
-      "app/*/*/*.jsx",
-      "app/*/*/*.js",
-      "!app/vendor/**"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 1,
-        "functions": 1,
-        "lines": 1,
-        "statements": 1
-      }
-    }
-  },
+ 
+  
   "dependencies": {
     "@webcomponents/webcomponentsjs": "~2.0.4",
     "bind-dom": "0.0.5",
@@ -122,7 +88,6 @@
     "concurrently": "^3.5.0",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.1",
-    "eslint": "^4.12.0",
     "ghooks": "^2.0.0",
     "grunt": "^1.0.1",
     "grunt-cache-busting": "^0.0.11",
@@ -142,7 +107,6 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
-    "jest": "^21.2.1",
     "nodemon": "^1.12.1",
     "npm-run-all": "^4.1.2",
     "opn-cli": "^3.1.0",

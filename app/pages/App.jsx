@@ -73,17 +73,12 @@ class App extends React.Component {
 
                 <Route exact path="/" render={() => <Home {...this.props} /> } />
                 <Route path="/about" render={() => <About {...this.props} /> } />
-                <Route path="/visibility" render={() => <Page_Visibility_API {...this.props} /> } />
-                <Route path="/resize" component={Resize_SubPub} />
-                <Route path="/communication" component={Components_Communication} />
+          
                 <Route path="/login" component={Login} />
                 <Route path="/logout" component={Logout} />
                 <Route path="/register" component={Register} />
 
-                <Alert alert={alertStore} />
 
-                <Notification notification={notificationStore} />
-                <notification-service cross-img-src="../images/cross.svg"></notification-service>
             </div>
         );
     }

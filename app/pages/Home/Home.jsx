@@ -14,6 +14,8 @@ export default class Home extends React.Component {
      * @param {Number} index
      * @param {Object} event
      */
+
+     // What does static?
     static removeWeather(index, event) {
         event && event.preventDefault();
         event && event.stopPropagation();
@@ -29,6 +31,7 @@ export default class Home extends React.Component {
             <div className="app-home">
 
                 <h1><FormattedMessage id="pages.home"/></h1>
+                <h2>Home header?</h2>
 
                 <Open_Weather_Search weather={weatherStore} />
 

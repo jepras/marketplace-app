@@ -1,4 +1,4 @@
-{
+/* {
     "fileServerFolder": "app/tests/e2e/",
     "integrationFolder": "app/tests/e2e/cypress/integration",
     "fixturesFolder": "app/tests/e2e/cypress/fixtures",
@@ -15,3 +15,4 @@
         }
     }
 }
+ */

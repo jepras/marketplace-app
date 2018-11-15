@@ -9,5 +9,6 @@ export default combineReducers({
     alert: alertReducer,
     weather: weatherReducer,
     weatherCities: weatherListReducer,
-    notification: notificationReducer
+    notification: notificationReducer,
+    
 });

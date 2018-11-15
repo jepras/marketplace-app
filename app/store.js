@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import promise from 'redux-promise';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
@@ -21,4 +21,14 @@ if (process && process.env && (process.env.NODE_ENV === 'production')) {
     middleware = applyMiddleware(thunk, promise, logger);
 }
 
-export default createStore(rootReducer, initialState, middleware);
+// Adding redux tools
+export default createStore(
+    rootReducer, 
+    initialState, 
+    compose(
+        middleware, 
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
+    
+);
+

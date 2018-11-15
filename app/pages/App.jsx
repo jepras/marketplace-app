@@ -10,6 +10,7 @@ import noInternet from 'no-internet';
 import isEmpty from 'lodash/isEmpty';
 
 import { pushNotification, removeNotification } from './../actions/notification';
+import Navbar from '../components/dumb/Navbar'
 
 // Services
 import Alert from './../services/Alert';
@@ -21,6 +22,9 @@ import About from './About/About';
 import Resize_SubPub from './Resize_SubPub/Resize_SubPub';
 import Page_Visibility_API from './Page_Visibility_API/Page_Visibility_API';
 import Components_Communication from './Components_Communication/Components_Communication';
+import Login from './Auth/Login';
+import Logout from './Auth/Logout';
+import Register from './Auth/Register';
 
 function mapStateToProps(store, props) {
     return {
@@ -57,20 +61,24 @@ class App extends React.Component {
 
         return (
             <div className="app">
-
+                <Navbar /><p>hej</p>
+                {/* OldNav
                 <ul className="app-navigation">
                     <li><Link to="/"><FormattedMessage id="pages.home"/></Link></li>
                     <li><Link to="/about"><FormattedMessage id="pages.about"/></Link></li>
                     <li><Link to="/resize"><FormattedMessage id="pages.resize_subpub"/></Link></li>
                     <li><Link to="/visibility"><FormattedMessage id="pages.page_visibility_api"/></Link></li>
                     <li><Link to="/communication"><FormattedMessage id="pages.components_communication"/></Link></li>
-                </ul>
+                </ul> */}
 
                 <Route exact path="/" render={() => <Home {...this.props} /> } />
                 <Route path="/about" render={() => <About {...this.props} /> } />
                 <Route path="/visibility" render={() => <Page_Visibility_API {...this.props} /> } />
                 <Route path="/resize" component={Resize_SubPub} />
                 <Route path="/communication" component={Components_Communication} />
+                <Route path="/login" component={Login} />
+                <Route path="/logout" component={Logout} />
+                <Route path="/register" component={Register} />
 
                 <Alert alert={alertStore} />
 
